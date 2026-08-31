@@ -6,12 +6,12 @@ using Soenneker.Replicate.OpenApiClientUtil.Abstract;
 namespace Soenneker.Replicate.OpenApiClientUtil.Registrars;
 
 /// <summary>
-/// Registers the OpenAPI client utility for dependency injection.
+/// Registers the lazily initialized Replicate API client.
 /// </summary>
 public static class ReplicateOpenApiClientUtilRegistrar
 {
     /// <summary>
-    /// Adds <see cref="ReplicateOpenApiClientUtil"/> as a singleton service. <para/>
+    /// Adds the Replicate API client utility as a singleton service. <para/>
     /// </summary>
     public static IServiceCollection AddReplicateOpenApiClientUtilAsSingleton(this IServiceCollection services)
     {
@@ -22,7 +22,7 @@ public static class ReplicateOpenApiClientUtilRegistrar
     }
 
     /// <summary>
-    /// Adds <see cref="ReplicateOpenApiClientUtil"/> as a scoped service. <para/>
+    /// Adds the Replicate API client utility as a scoped service backed by the singleton HTTP client provider. <para/>
     /// </summary>
     public static IServiceCollection AddReplicateOpenApiClientUtilAsScoped(this IServiceCollection services)
     {

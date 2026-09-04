@@ -12,6 +12,7 @@ using Soenneker.Utils.AsyncSingleton;
 
 namespace Soenneker.Replicate.OpenApiClientUtil;
 
+/// <inheritdoc cref="IReplicateOpenApiClientUtil" />
 public sealed class ReplicateOpenApiClientUtil : IReplicateOpenApiClientUtil
 {
     private readonly AsyncSingleton<ReplicateOpenApiClient> _client;
